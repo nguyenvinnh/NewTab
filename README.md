@@ -1,6 +1,6 @@
 # NewTabVideo 
 
-**NewTabVideo** là một tiện ích / tùy chỉnh đơn giản giúp nâng cấp trang New Tab (trang thẻ mới) cũ kỹ, nhàm chán trên các trình duyệt nhân Chromium 
+**NewTabVideo** là một tiện ích / tùy chỉnh đơn giản giúp nâng cấp trang New Tab (trang thẻ mới) trên các trình duyệt nhân Chromium cho phép sử dụng Custom New Tab Page 
 
 ---
 
