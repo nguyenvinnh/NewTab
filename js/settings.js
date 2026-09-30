@@ -72,15 +72,25 @@ const SettingsUI = {
         this.closeAllMenus();
     },
 
-    // Lock Position
+    // Lock Position & Region (Việt Nam)
     updateLockUI(isLocked) {
         const container = document.getElementById('main-container');
+        const glInput = document.getElementById('gl-input');
+        const crInput = document.getElementById('cr-input');
+        const hlInput = document.getElementById('hl-input');
+
+        if (glInput && crInput && hlInput) {
+            glInput.disabled = !isLocked;
+            crInput.disabled = !isLocked;
+            hlInput.disabled = !isLocked;
+        }
+
         if (!container || !this.lockPosBtn) return;
         if (isLocked) {
             container.classList.remove('draggable');
             this.lockPosBtn.innerHTML = `
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
-                Khóa vị trí: Bật
+                Khóa vị trí: Bật (VN)
             `;
         } else {
             container.classList.add('draggable');

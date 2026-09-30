@@ -109,7 +109,9 @@ const Search = {
             }
         };
 
-        script.src = `https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(query)}&callback=${callbackName}`;
+        const isLocked = Storage.getBool('pos_locked', false);
+        const geoParams = isLocked ? '&gl=vn&hl=vi' : '';
+        script.src = `https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(query)}${geoParams}&callback=${callbackName}`;
         script.onerror = () => {
             delete window[callbackName];
             script.remove();

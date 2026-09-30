@@ -1,0 +1,11 @@
+{
+  "name": "Tab mới - Tìm kiếm nhanh",
+  "short_name": "Tab mới",
+  "description": "Trang tab mới tốc độ cao, lưu hình nền trên IndexedDB, lưu cấu hình trên localStorage, hoạt động offline với Service Worker",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "orientation": "any"
+}

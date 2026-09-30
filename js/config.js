@@ -1,6 +1,19 @@
-// Cấu hình toàn cục
+// Cấu hình toàn cục & Bảo vệ Quyền riêng tư (Chặn lấy tọa độ GPS)
+(function blockGeolocation() {
+    if (typeof navigator !== 'undefined' && navigator.geolocation) {
+        const dummyError = { code: 1, message: 'Geolocation access disabled for privacy.' };
+        navigator.geolocation.getCurrentPosition = function (success, error) {
+            if (typeof error === 'function') error(dummyError);
+        };
+        navigator.geolocation.watchPosition = function (success, error) {
+            if (typeof error === 'function') error(dummyError);
+            return 0;
+        };
+    }
+})();
+
 const CONFIG = {
-    defaultBg: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80',
+    defaultBg: './anime-bikini-girls.1920x1080.mp4',
     suggestionDebounce: 500,
     margin: 20,
 };
